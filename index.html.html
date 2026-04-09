@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 7 Días - Paz Interior</title>
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #cbd5e1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Segoe UI', 'Roboto', 'Georgia', serif;
+            padding: 20px 0;
+        }
+
+        /* Cada página tipo libro espiritual */
+        .page {
+            max-width: 1000px;
+            width: 90%;
+            background: #FFFCF8;
+            margin: 30px auto;
+            padding: 50px 48px;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.2);
+            position: relative;
+            page-break-after: always;
+            break-inside: avoid;
+            transition: all 0.2s;
+        }
+
+        /* Fondos especiales */
+        .bg-intro {
+            background: linear-gradient(135deg, #f5f0e7 0%, #e8e0d5 100%);
+        }
+        .bg-day {
+            background: linear-gradient(145deg, #ffffff 0%, #faf7f2 100%);
+        }
+        .bg-calm {
+            background: linear-gradient(135deg, #eef2f5 0%, #e3e9ef 100%);
+        }
+        .bg-closure {
+            background: linear-gradient(135deg, #ede7f6 0%, #e1d9ee 100%);
+        }
+
+        /* Tipografía espiritual */
+        h1 {
+            font-size: 3.2rem;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-weight: 600;
+            color: #2c3a2f;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-size: 2rem;
+            font-family: 'Georgia', serif;
+            color: #4a5b4e;
+            margin: 1rem 0 0.5rem;
+            border-left: 6px solid #b7c9b1;
+            padding-left: 20px;
+        }
+        h3 {
+            font-size: 1.8rem;
+            font-family: 'Georgia', serif;
+            color: #5e6b5b;
+            margin: 1.2rem 0 0.5rem;
+        }
+        .day-badge {
+            display: inline-block;
+            background: #d9c5b3;
+            color: #3a2a24;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.18rem;
+            line-height: 1.55;
+            color: #2c3e2f;
+            margin-bottom: 1.2rem;
+            font-weight: 400;
+        }
+        .ejercicio, .reflexion {
+            background: #fefaf5;
+            padding: 1.4rem 1.8rem;
+            border-radius: 28px;
+            margin: 1.8rem 0;
+            border: 1px solid #e6ddcf;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .ejercicio h4, .reflexion h4 {
+            font-size: 1.4rem;
+            color: #8f6b4c;
+            margin-bottom: 0.8rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .icono {
+            font-size: 2rem;
+            margin-right: 12px;
+            vertical-align: middle;
+            color: #9b7b5c;
+        }
+        .cita-final {
+            font-style: italic;
+            font-size: 1.3rem;
+            text-align: center;
+            background: #e8e0d0;
+            padding: 1.8rem;
+            border-radius: 48px;
+            color: #2c3e2f;
+            margin: 2rem 0;
+        }
+        hr {
+            margin: 2rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, #ccc, transparent);
+        }
+        .footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #9a8c7a;
+        }
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .page {
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+                page-break-after: always;
+                width: 100%;
+            }
+        }
+        i, .fas, .far {
+            margin-right: 8px;
+            color: #b78c5a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PORTADA -->
+    <div class="page bg-intro" style="text-align: center;">
+        <i class="fas fa-feather-alt" style="font-size: 3rem; color: #9b7b5c;"></i>
+        <h1>Reto de 7 Días<br>para Activar Tu Paz Interior</h1>
+        <p style="font-size: 1.3rem; margin-top: 1rem;">Un proceso guiado para calmar la mente,<br>despertar la conciencia y reconectar con tu esencia</p>
+        <hr style="width: 80px; margin: 2rem auto;">
+        <p><i class="fas fa-leaf"></i> respira · suelta · vuelve a ti</p>
+    </div>
+
+    <!-- INTRO COMPLETA (página 2) -->
+    <div class="page bg-intro">
+        <h2>Introducción al reto</h2>
+        <p>Vivimos en una época donde la mente rara vez descansa. Las notificaciones constantes, el exceso de información y las múltiples responsabilidades del día a día hacen que muchas personas vivan con una sensación permanente de presión mental.</p>
+        <p>Pensamientos que no se detienen. Preocupaciones sobre el futuro. Recuerdos que regresan una y otra vez.</p>
+        <p>Con el tiempo, este estado mental puede generar ansiedad, agotamiento emocional y una sensación de desconexión interior.</p>
+        <p>Sin embargo, existe una verdad profunda que ha sido enseñada por tradiciones espirituales durante siglos: <strong>la paz interior no es algo que debamos crear, es algo que debemos redescubrir.</strong> Siempre ha estado dentro de nosotros. Pero el ruido mental suele ocultarla.</p>
+        <p>Este reto de 7 días ha sido diseñado para ayudarte a dar los primeros pasos hacia ese redescubrimiento. No se trata de cambiar tu vida por completo en una semana. Se trata de abrir una puerta hacia una forma diferente de vivir tu experiencia interior.</p>
+        <p><i class="fas fa-check-circle"></i> Durante los próximos siete días aprenderás a: calmar el ruido de la mente, desarrollar mayor presencia, escuchar tu intuición, reconectar con la calma interior.</p>
+        <p>Cada día incluye una práctica sencilla que puedes realizar en pocos minutos. Lo más importante no es la perfección. Lo importante es la constancia y la apertura interior.</p>
+        <div class="cita-final">🌿 Respira profundamente.<br>Tu viaje hacia una mente más tranquila comienza ahora.</div>
+    </div>
+
+    <!-- DÍA 1 -->
+    <div class="page bg-day">
+        <span class="day-badge"><i class="far fa-sun"></i> DÍA 1</span>
+        <h2>Liberar la mente del exceso de estímulos</h2>
+        <p>El primer paso hacia la paz interior es reconocer una realidad del mundo moderno: nuestra mente está constantemente sobreestimulada. Cada día recibimos una enorme cantidad de información. Noticias. Redes sociales. Mensajes. Opiniones.</p>
+        <p>El cerebro humano no fue diseñado para procesar tantos estímulos simultáneamente. Por eso, muchas personas experimentan una sensación constante de saturación mental. Antes de aprender a calmar la mente, necesitamos crear espacio mental.</p>
+        <div class="ejercicio">
+            <h4><i class="fas fa-spa icono"></i> Ejercicio del día</h4>
+            <p>Durante el día de hoy intenta reducir conscientemente algunos estímulos innecesarios. Puedes comenzar con algo simple: evita revisar el teléfono durante los primeros 30 minutos del día, limita el tiempo en redes sociales, crea pequeños momentos de silencio sin música ni distracciones.</p>
+            <p>Este pequeño cambio puede parecer insignificante. Pero comenzarás a notar algo interesante: cuando disminuye el ruido exterior, la mente comienza a relajarse.</p>
+        </div>
+        <div class="reflexion">
+            <h4><i class="fas fa-pen-fancy"></i> Reflexión del día</h4>
+            <p>¿Qué tipo de información estoy permitiendo entrar constantemente en mi mente? Tomar conciencia de esto es el primer paso hacia una mente más tranquila.</p>
+        </div>
+    </div>
+
+    <!-- DÍA 2 -->
+    <div class="page bg-day">
+        <span class="day-badge"><i class="fas fa-lungs"></i> DÍA 2</span>
+        <h2>La respiración como puerta hacia la calma</h2>
+        <p>La respiración es una de las herramientas más poderosas para calmar la mente. Siempre está disponible. Siempre ocurre en el momento presente. Muchas tradiciones espirituales han utilizado la respiración como una forma de regresar al equilibrio interior.</p>
+        <p>Cuando respiramos conscientemente, el sistema nervioso comienza a relajarse. El cuerpo envía una señal clara al cerebro: todo está bien en este momento.</p>
+        <div class="ejercicio">
+            <h4><i class="fas fa-hourglass-half"></i> Ejercicio del día</h4>
+            <p>Dedica 5 minutos a esta práctica. Siéntate en una posición cómoda. Cierra los ojos si lo deseas. Inhala lentamente por la nariz durante 4 segundos. Exhala suavemente durante 6 segundos. Repite este ciclo durante varios minutos. Mientras respiras, dirige tu atención únicamente al movimiento del aire. Cuando aparezcan pensamientos, simplemente obsérvalos y vuelve a la respiración.</p>
+        </div>
+        <div class="reflexion">
+            <h4><i class="fas fa-cloud-moon"></i> Reflexión del día</h4>
+            <p>Observa cómo se siente tu mente después de este ejercicio. La respiración consciente es una de las formas más rápidas de recuperar la calma interior.</p>
+        </div>
+    </div>
+
+    <!-- DÍA 3 -->
+    <div class="page bg-day">
+        <span class="day-badge"><i class="fas fa-brain"></i> DÍA 3</span>
+        <h2>Aprender a observar la mente</h2>
+        <p>Uno de los descubrimientos más importantes en el camino espiritual es comprender algo simple: <strong>tú no eres tus pensamientos</strong>. Los pensamientos aparecen constantemente en la mente. Algunos son útiles. Otros simplemente son repeticiones automáticas. Pero cuando aprendemos a observarlos sin reaccionar inmediatamente, recuperamos una enorme libertad interior.</p>
+        <div class="ejercicio">
+            <h4><i class="fas fa-cloud-sun"></i> Ejercicio del día</h4>
+            <p>Durante algunos minutos observa tus pensamientos como si fueran nubes atravesando el cielo. No intentes detenerlos. No intentes analizarlos. Simplemente obsérvalos. Cada vez que aparezca un pensamiento, reconoce su presencia y déjalo pasar. Con el tiempo notarás algo interesante: los pensamientos pierden gran parte de su poder cuando dejamos de identificarnos completamente con ellos.</p>
+        </div>
+        <div class="reflexion">
+            <h4><i class="fas fa-water"></i> Reflexión del día</h4>
+            <p>¿Cuántos de mis pensamientos realmente reflejan la realidad? Muchos pensamientos son solo interpretaciones momentáneas.</p>
+        </div>
+    </div>
+
+    <!-- DÍA 4 -->
+    <div class="page bg-calm">
+        <span class="day-badge"><i class="fas fa-silence"></i> DÍA 4</span>
+        <h2>La quietud interior</h2>
+        <p>En una cultura que valora la actividad constante, la quietud puede parecer extraña. Pero la quietud es una de las puertas más poderosas hacia la sabiduría interior. Cuando la mente se detiene, aparece claridad. Muchas de las grandes ideas y comprensiones profundas surgen en momentos de silencio.</p>
+        <div class="ejercicio">
+            <h4><i class="fas fa-bed"></i> Ejercicio del día</h4>
+            <p>Busca un lugar tranquilo. Permanece en silencio durante 10 minutos. No necesitas hacer nada. Solo estar presente. Observa tu respiración. Observa los sonidos a tu alrededor. Observa las sensaciones en tu cuerpo. Permite que la mente se calme naturalmente.</p>
+        </div>
+        <div class="reflexion">
+            <h4><i class="fas fa-star-and-crescent"></i> Reflexión del día</h4>
+            <p>La quietud no es ausencia de vida. Es el espacio donde la vida puede ser percibida con mayor claridad.</p>
+        </div>
+    </div>
+
+    <!-- DÍA 5 -->
+    <div class="page bg-day">
+        <span class="day-badge"><i class="fas fa-ear-listen"></i> DÍA 5</span>
+        <h2>Escuchar la voz interior</h2>
+        <p>Debajo del ruido mental existe una dimensión más profunda de sabiduría. Muchas personas la llaman intuición. La intuición no grita. No discute. Se manifiesta como una sensación tranquila de claridad. Pero para escucharla necesitamos silencio interior.</p>
+        <div class="ejercicio">
+            <h4><i class="fas fa-feather"></i> Ejercicio del día</h4>
+            <p>Escribe durante 10 minutos respondiendo esta pregunta: <strong>¿Qué es lo que realmente necesito en este momento de mi vida?</strong> No intentes escribir la respuesta perfecta. Solo deja que las palabras fluyan. Muchas veces la intuición se revela cuando dejamos de intentar controlarlo todo.</p>
+        </div>
+        <div class="reflexion">
+            <h4><i class="fas fa-hand-sparkles"></i> Reflexión del día</h4>
+            <p>A lo largo del día observa cuándo sientes una sensación profunda de tranquilidad o autenticidad. Es posible que tu intuición esté intentando guiarte.</p>
+        </div>
+    </div>
+
+    <!-- DÍA 6 -->
+    <div class="page bg-calm">
+        <span class="day-badge"><i class="fas fa-clock"></i> DÍA 6</span>
+        <h2>Vivir en el presente</h2>
+        <p>La mente suele vivir en dos lugares imaginarios: el pasado y el futuro. Pero la vida real ocurre únicamente en el presente. Cuando aprendemos a regresar al ahora, la mente comienza a relajarse.</p>
+        <div class="ejercicio">
+            <h4><i class="fas fa-hands"></i> Ejercicio del día</h4>
+            <p>Elige una actividad cotidiana —como caminar o comer— y realiza esa actividad con total atención. Observa: los sonidos, las sensaciones, los movimientos del cuerpo. Cada vez que la mente se distraiga, regresa suavemente al momento presente.</p>
+        </div>
+        <div class="reflexion">
+            <h4><i class="fas fa-seedling"></i> Reflexión del día</h4>
+            <p>La paz interior muchas veces no aparece porque la mente está constantemente en otro lugar. El presente siempre está disponible.</p>
+        </div>
+    </div>
+
+    <!-- DÍA 7 -->
+    <div class="page bg-day">
+        <span class="day-badge"><i class="fas fa-dove"></i> DÍA 7</span>
+        <h2>Integrar la paz interior</h2>
+        <p>Hoy es el último día del reto. Pero en realidad es el comienzo de un nuevo proceso. La paz interior no es un destino final. Es una práctica diaria. Cada respiración consciente. Cada momento de presencia. Cada pausa de silencio. Contribuye a fortalecer esa paz.</p>
+        <div class="ejercicio">
+            <h4><i class="fas fa-journal-whills"></i> Ejercicio del día</h4>
+            <p>Diseña tu propia rutina breve de paz interior. Por ejemplo: 5 minutos de respiración consciente por la mañana, una pausa consciente durante el día, 5 minutos de reflexión antes de dormir. No necesitas una rutina complicada. La clave es la constancia.</p>
+        </div>
+        <div class="reflexion">
+            <h4><i class="fas fa-om"></i> Reflexión final del reto</h4>
+            <p>Durante estos siete días has comenzado a explorar una dimensión diferente de tu experiencia interior. Quizás ya has notado pequeños cambios: momentos de mayor calma, momentos de claridad, momentos de presencia. Estos cambios pueden parecer sutiles. Pero con el tiempo se vuelven más profundos.</p>
+        </div>
+    </div>
+
+    <!-- CIERRE Y RECORDATORIO -->
+    <div class="page bg-closure">
+        <h2>🌙 Un recordatorio para tu camino</h2>
+        <p>La paz interior no depende de que el mundo sea perfecto. Depende de aprender a relacionarte con tu mente de una manera diferente. Habrá días tranquilos. Habrá días agitados. Eso es parte de la experiencia humana.</p>
+        <p>Lo importante es recordar que siempre puedes regresar a ti mismo. A través de una respiración. A través de un momento de silencio. A través de la simple decisión de estar presente.</p>
+        <div class="cita-final">
+            <i class="fas fa-heart" style="color: #b78c5a;"></i> Gracias por aceptar este reto<br>
+            Quiero felicitarte por haber llegado hasta aquí.<br>
+            En una sociedad que constantemente nos empuja hacia el exterior, dedicar tiempo a explorar tu mundo interior es un acto de valentía y sabiduría.
+        </div>
+        <p>Espero que este reto de siete días haya abierto una puerta hacia una relación más tranquila y consciente con tu mente. Y recuerda siempre: <strong>la paz que buscas no está lejos. Siempre ha estado dentro de ti.</strong></p>
+        <p>Solo necesitas detenerte lo suficiente para descubrirla. Tu camino hacia una vida más consciente y serena continúa ahora. Y comienza, como siempre, con una sola respiración consciente.</p>
+        <hr>
+        <p class="footer-note"><i class="fas fa-feather-alt"></i> respira · confía · vuelve a casa</p>
+    </div>
+
+</body>
+</html>
